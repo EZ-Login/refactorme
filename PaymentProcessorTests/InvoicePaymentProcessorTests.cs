@@ -158,8 +158,8 @@ namespace PaymentProcessorTests
 			var invoice = new Invoice( )
 			{
 				Amount = 10,
-				AmountPaid = 0,
-				Payments = new List<Payment>( ) { new Payment( ) { Amount = 10 } }
+                AmountPaid = 10, //Changed to 10 because of the value must be equal to sum of payments
+                Payments = new List<Payment>( ) { new Payment( ) { Amount = 10 } }
 			};
 			var repo = new InvoiceRepository( invoice );
 			var paymentProcessor = new InvoicePaymentProcessor( repo );
